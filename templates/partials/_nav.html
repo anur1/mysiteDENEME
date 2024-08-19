@@ -1,0 +1,102 @@
+   {% load static  %}
+   
+
+    <nav class= "navbar navbar-expand-lg bg-primary navbar-dark" style = "background: #DFFF00; border:double " >
+        <div class="container"> 
+            <img src="{% static 'img/bjklogo.jpg' %}" alt="" width="50" height="60">
+            <a href="{% url "index" %}" class="navbar-brand">Course App</a> 
+
+
+<!--toggle button-->
+<button class="navbar-toggler" type = "button" data-bs-toggle="collapse" data-bs-target="#navbar">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+
+<div class="collapse navbar-collapse" id="navbar"> <!--id ile toglle bar target aynı olmalı-->
+
+    <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+            <a href="{% url 'index' %}" class="nav-link">Kurslar</a>
+        </li>
+
+        {% if  user.is_superuser %}
+
+            <li class="nav-item">
+                <a href="{% url "add_course" %}" class="nav-link">Admin Kurs Ekle</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a href="{% url "course_list" %}" class="nav-link">Admin Kurs Listesi  </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/admin" class="nav-link">Admin</a>
+            </li>
+
+        {% endif %}
+
+
+    </ul>   
+
+    <!--login-logout-register nav-->
+    <ul class="navbar-nav me-1">
+
+        <!--giriş yapmış olanlar logout'u görür-->
+        {% if user.is_authenticated %}
+
+        <li class="nav-item"> 
+            <strong>
+            <a href="#" class="nav-link"style="color:green">Hoş Geldiniz, {{user.username}}</a>  </strong>    </li>
+        
+
+
+        <li class="nav-item"> <strong> 
+            <a href="{% url "change_password" %}" class="nav-link" style="color:orange">Parola Güncelleme </a>
+        </strong>         </li>
+        
+
+
+
+        <li class="nav-item"> <strong> 
+            <a href="{% url "user_logout" %}" class="nav-link" style="color:red">Logout  </a>
+        </strong>         </li>
+        
+        <!--giriş yapmamış olanlar login veya register'ı görür-->
+        {% else %}
+        <li class="nav-item">
+            <strong>
+            <a href="{% url "user_login" %}" class="nav-link" style="color:green">Login</a>
+            </strong>
+        </li>
+
+        <li class="nav-item">
+            <strong>            <a href="{% url "user_register" %}" class="nav-link" style="color:green">Register</a>
+            </strong>
+        </li>
+
+        {% endif %}
+ 
+
+
+ 
+
+        <li class="nav-item">
+            <a href="/admin" class="nav-link">Admin</a>
+        </li>
+    </ul>   
+
+
+    <form class = "d-flex" action="{% url "search" %}">
+        <input class= "form-control me-1" type="text" name="q"placeholder="Anahtar Kelime">
+        <button type="submit" class = "btn btn-secondary">Arama</button>
+    </form>
+
+
+</div>
+   
+
+
+        </div>
+       </nav>

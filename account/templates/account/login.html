@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block css_files %}
+        <link rel="stylesheet" href="{%static 'courses/css/style.css'%}">
+{% endblock  %}
+
+
+{% block  page_title %}Login Sayfası{% endblock %}
+
+
+{% block content %}
+        <div class="container mt-3">
+                <div class="row">
+                            <!--Menu-->
+                    <div class="col-12" style="border:dashed; background-color:Lime">
+                    
+                        <h1>Login</h1>
+                        <hr>
+                        <form method="POST" action="">
+                        {% csrf_token %}
+                        <!--hatalı giriş mesajı contrib.messages'a aktarıldı
+                        messages-> messages.html'den toptan kontrol ediliyor. layout.html'ye messages.html include eidliyor 
+                        {% if error %} <div class="alert alert-danger">{{error}}</div>{% endif %}
+                         --> 
+
+                         {% comment %} aşağıdaki kısım views.py ye AuthenticationForm() eklenmeden önceydei {% endcomment %}
+                        {% comment %} <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" name= "username" id="username" class= "form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name= "password" id="password" class= "form-control" required>
+                        </div> {% endcomment %}
+
+
+                       {% include "partials/_form.html" %}
+                        <button type="submit" class="btn btn-primary" >Login</button>
+
+                    </form>
+
+
+                    </div>
+
+           
+                </div>
+        </div>
+{% endblock  %}  
+
+
+
+
+
+
+{% block js_files %}
+        <script src= "{%static 'courses/js/script.js' %}"></script>
+{% endblock  %}

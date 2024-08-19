@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block css_files %}    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />  
+{% endblock %}
+
+
+{% block  page_title %}Anasayfa{% endblock %}
+
+
+
+{% block content %}
+        <div class="container mt-3">
+                <div class="row">
+                        <!--Menu-->
+                <div class="col-3  bg-success  border border-info">
+                        {% include "courses/partials/_categories.html" %}
+                </div>
+        
+                <div class="col-9 bg-secondary border border-danger">
+                <!--Content-->
+                <h1>Ana  anasayfac ccc</h1>
+                </div>
+                </div>
+        </div>
+{% endblock  %}
+
+
+{% block js_files %}   {% endblock %}

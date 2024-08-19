@@ -1,0 +1,135 @@
+a {
+	text-decoration:none;
+	color: rgb(40,40,221);
+}
+
+a:visited {
+	text-decoration:none;
+	color:rgb(120,120,255);
+}
+a:hover {
+	text-decoration:none;
+	color:rgb(187,0,0);
+}
+body {
+	font-family: "Luxi Sans", "Bitstream Vera Sans", "Lucida Grande", "Trebuchet MS", verdana, sans-serif;
+	margin: 1em;
+	background-color: rgb(255,255,248);
+}
+h1 {
+	font-family: Times, serif; text-align: center; font-size: 1.7em;
+	color: rgb(0,0,128);
+}
+h2 {
+	font-family: verdana, Times, serif; font-size: larger; 
+	color: rgb(0,0,128);
+	font-weight: bold;
+	margin-top: 1.5em;
+	margin-bottom: 8px;
+	border-bottom: 1px #880000 groove;
+}
+h3 {
+	font-family: Times, serif; font-size: 1.2em;
+	color: rgb(0,0,128);
+	font-style: italic;
+	font-weight: bold;
+	margin-top: 1.5em;
+	margin-bottom: 0;
+}
+.toc {
+	border: 1px black solid;
+	background-color: rgb(240,240,255);
+	padding: 2em;
+	margin-right: 2em;
+}
+.outline {
+	border: 1px black solid;
+	background-color: rgb(255,238,221);
+	padding: 5px;
+	padding-right: 1.2em;
+	margin-bottom: 0;
+}
+.outtitle { 
+	color: rgb(153,0,0);
+	font-family: verdana, Times, serif; font-size: 13pt;
+}
+.outline2 {
+	background-color: rgb(240,239,240);
+	border: 1px black solid;
+	margin-top: 1em;
+	padding: 5px;
+	padding-right: 1.2em;
+}
+.note { 
+	border: 1px black solid;
+	background-color: rgb(255,255,204);
+	margin: .5em;
+	padding: 1em;
+	text-align: center;
+	font-weight: bold;
+}
+.summary { 
+	color: rgb(153,0,0);
+	font-size: 1em;
+	font-weight: bold;
+}
+.sumbox { 
+	background-color: rgb(238,255,238);
+	border: 1px black dashed;
+	margin: 2em;
+	padding: 1em;
+	padding-right: 2.5em;
+}
+.botmenu { 
+	margin-top: 2em;
+	border: 1px black solid;
+	background-color: rgb(238,238,255);
+	font-size: .9em;
+	color: rgb(153,153,255);
+	font-style: italic;
+	font-weight: bold;
+}
+.inlist { list-style-position: inside; }
+em { 
+	color: rgb(255,119,51);
+	font-style: normal;
+}
+strong { 
+	color: rgb(238,68,17);
+	font-weight: bold;
+}
+.larger { font-size: 20pt; }
+.large { font-size: 15pt; }
+.small { font-size: 10pt; }
+.bigger { font-size: 20pt; }
+.border { border: 1px #888888 solid; }
+.problem { line-height: 200%; }
+.plain { list-style: none; }
+.footer { 
+	text-align: center;;
+	font-size: smaller;
+}
+.footer .copyright { font-style: italic; }
+.footer p { margin: 0; }
+.popup {
+	cursor: help;
+	text-decoration: none
+}
+span.popup:hover {
+	text-decoration:none;
+	color: rgb(159,20,26);
+}
+.hide {
+visibility: hidden;
+}
+.bottom  {vertical-align: bottom }
+.top  {vertical-align: 50% }
+.answerline { border-bottom: 1px black solid; text-align: center; width: 10em}
+.menu {background-color: #FFFFDD; }
+.overline {text-decoration: overline; }
+th {background-color: #FFFFDD; }
+.empty {background-color: #EEEEEE; }
+
+table {
+	empty-cells: hide;
+}

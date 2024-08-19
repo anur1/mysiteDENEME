@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block css_files %}
+        <link rel="stylesheet" href="{%static 'courses/css/style.css'%}">
+{% endblock  %}
+
+
+{% block  page_title %}Kurs Resmi Yükleme{% endblock %}
+
+
+{% block content %}
+        <div class="container mt-3">
+                <div class="row">
+                    <div class="col-12" style="border:dashed; background-color:Lime">
+                       <form action="{% url "upload_image" %}" method="POST" enctype = "multipart/form-data">
+                        {% csrf_token %}
+                                <div class="input-group">
+                                        {{form}}  {% comment %} views.py'den gönderilen uplaod formu {% endcomment %}
+                                        <button type="submit">Yükle</button>
+                       </form>
+                    </div>
+                </div>
+        </div>
+{% endblock  %}  
+
+
+
+
+
+
+{% block js_files %}
+        <script src= "{%static 'courses/js/script.js' %}"></script>
+{% endblock  %}

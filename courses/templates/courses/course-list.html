@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block css_files %}
+        <link rel="stylesheet" href="{%static 'courses/css/style.css'%}">
+{% endblock  %}
+
+
+{% block  page_title %}Tüm Kurs Listesi{% endblock %}
+
+
+{% block content %}
+        <div class="container mt-3">
+                <div class="row">
+                            <!--Menu-->
+                    <div class="col-12" style="border:dashed; background-color:Lime">
+                        <table class="table table-sm table-bordered">
+                                <thead>
+                                        <tr>
+                                                <th style = "width:120px;">image</th>
+                                                <th>title</th>
+                                                <th>slug</th>
+                                                <th style="width:70px">buton</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        {% for course in courses %}
+                                                <tr>
+                                                        <td>
+                                                                <img src="{{course.image.url}}"  class="img-fluid">
+                                                        </td>
+                                                        <td>{{course.title}}</td>
+                                                        <td>{{course.slug}}</td>
+                                                        <td>
+                                                                <a href="{% url 'course_edit' course.id %}" class= "btn btn-primary btn-sm">Güncelle</a>
+                                                                <a href="{% url 'course_delete' course.id %}" class= "btn btn-danger btn-sm">Sil</a>
+
+                                                        </td>
+                                                </tr>
+                                        {% endfor %}
+                                </tbody>
+
+                        </table>
+
+
+                    </div>
+
+           
+                </div>
+        </div>
+{% endblock  %}  
+
+
+
+
+
+
+{% block js_files %}
+        <script src= "{%static 'courses/js/script.js' %}"></script>
+{% endblock  %}

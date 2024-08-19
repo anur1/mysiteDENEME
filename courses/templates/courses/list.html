@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block css_files %}
+        <link rel="stylesheet" href="{%static 'courses/css/style.css'%}">
+{% endblock  %}
+
+
+{% block  page_title %}Kurslar Anasayfa{% endblock %}
+
+
+
+
+
+{% block content %}
+        <div class="container mt-3"  >
+                <div class="row">
+                            <!--Menu-->
+                    <div class="col-2" style="border:dashed; background-color:Lime  ">
+
+                    {% include 'courses/partials/_categories.html' %}
+                       </div>
+
+                <div class="col-1" style="">
+                                Boş alan
+                   
+                </div>
+        
+                <div class="col-9" style="border:dotted; background:#BE6EFD"> 
+                
+                <!--Content-->
+                <h2>Bütün aktif kurslarımıza gözatın. </h2>
+                        {{page_obj.paginator.object_list}}
+                        {% if page_obj.object_list|length == 0%}
+                                <div class="alert alert-warning">Kurs bulunamadı.</div>
+                        {% endif %}
+
+                        {% for course  in page_obj.object_list %} 
+                                         {% include 'courses/partials/_course.html' %}
+                        {% endfor %}
+
+
+                        {% include "courses/partials/_pagination.html" %}
+                        </div>
+                </div>
+        </div>
+{% endblock  %}  
+
+
+
+
+
+
+{% block js_files %}
+        <script src= "{%static 'courses/js/script.js' %}"></script>
+{% endblock  %}

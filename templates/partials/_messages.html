@@ -1,0 +1,15 @@
+<!--gelen request'te  hata mesajları varsa bunu sırası ile  yazdır-->
+{% if messages %}
+    <ul class= "container-fluid p-0 m-0">
+
+        {% for message in messages %}
+            <!--gelen mesajın tag bilgisi varsa, class bilgisini  ve mesajı al-->     
+            <div class= "alert {{message.tags}} alert-dismissible fade show mb-0 text-center">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+
+    </ul>
+
+{% endif %}

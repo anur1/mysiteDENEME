@@ -1,0 +1,25 @@
+<!--{{form}} dışı hatalara uyarı verme-->
+{% for error in form.non_field_errors %}
+        <div class="alert alert-danger">{{error}}</div>
+{% endfor %}
+
+
+
+<!--{{form}} mesajlarını açma-->
+{% for field in form %}
+
+        <!--{{form}} da hata varsa classa invalid ekleme -->
+        <div class="mb-3 {% if field.errors %}invalid{% endif %}">
+
+                {% if field.errors %} 
+                        <div class="alert alert-danger pb-0"> {{field.errors}}  </div>
+                 {% endif %}
+                 
+                <label for="{{field.id_for_label}}" class="form-label">{{field.label}}</label>
+
+                {{field}}
+
+        </div>             
+
+{% endfor %}
+

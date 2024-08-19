@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block css_files %}
+        <link rel="stylesheet" href="{%static 'courses/css/style.css'%}">
+{% endblock  %}
+
+
+{% block  page_title %}{{course.title}}{% endblock %}
+
+
+
+
+
+{% block content %}
+        <div class="container mt-3">
+                <div class="row">
+                            <!--Menu-->
+                    <div class="col-2" style="border:dashed; background-color:Lime">
+
+               <!--     {% include 'courses/partials/_categories.html' %}-->
+               <img   class="img-fluid rounded"  src="{{course.image.url}}"      alt="course.title"   />
+
+
+                       </div>
+
+                <div class="col-1" style="">
+                                Boş alan
+                   
+                </div>
+        
+                <div class="col-9" style="border:dotted; background:#BE6EFD">
+                <!--Content-->
+                        <h1 class="h3" >{{course.title}}  </h1>
+                        <p>{{course.subtitle}}</p>   <!--  #ckeditor7-->
+                </div>
+                </div>
+                <div class="row">
+                        <div class="col-12">
+                                <p>{{course.description}}</p>  <!--|course.description|safe  #ckeditor6-->
+
+                        </div>
+                </div>
+        </div>
+{% endblock  %}  
+
+
+
+
+
+
+{% block js_files %}
+        <script src= "{%static 'courses/js/script.js' %}"></script>
+{% endblock  %}
